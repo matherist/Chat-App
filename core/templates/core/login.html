@@ -1,10 +1,10 @@
 {% extends 'core/base.html' %}
 
-{% block title %} Sign Up | {% endblock %}
+{% block title %} Login | {% endblock %}
 
 {% block content %}
 <div class="p-10 lg:p-20 text-center">
-    <h1 class="text-3xl lg:text-6xl text-white">Sign Up</h1>
+    <h1 class="text-3xl lg:text-6xl text-white">Login</h1>
 </div>
 <form method="post" action="." class="lg:w-1/4 px-4 mx-auto">
     {% csrf_token %}
@@ -13,12 +13,8 @@
         <input type="text" name="username" class="w-full mt-2 px-4 py-2 rounded-xl">
     </div>
     <div class="mb-5">
-        <label class="text-white">Password1</label>
-        <input type="password" name="password1" class="w-full mt-2 px-4 py-2 rounded-xl">
-    </div>
-    <div class="mb-5">
-        <label class="text-white">Password2</label>
-        <input type="password" name="password2" class="w-full mt-2 px-4 py-2 rounded-xl">
+        <label class="text-white">Password</label>
+        <input type="password" name="password" class="w-full mt-2 px-4 py-2 rounded-xl">
     </div>
     {% if form.errors %}
        {% for field in form%}
@@ -29,6 +25,6 @@
            {% endfor %}
        {% endfor %}
     {% endif %}
-    <button class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">Submit</button>
+    <button class="px-5 py-3 rounded-xl text-white bg-teal-800 hover:bg-teal-700">Login</button>
 </form>
 {% endblock content %}
