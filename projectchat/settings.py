@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
     'core',
+    'room',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'projectchat.wsgi.application'
 ASGI_APPLICATION = 'projectchat.asgi.application'
+# Channel layer settings
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        # 'CONFIG': {
+        #     "hosts": [('127.0.0.1', 6379)],
+        # },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
