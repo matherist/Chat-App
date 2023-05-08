@@ -4,7 +4,8 @@ from asgiref.sync import sync_to_async
 from .models import Message, Room
 from django.contrib.auth.models import User
 from textblob import TextBlob  # Импортируйте TextBlob
-import re 
+import re
+# Code
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         self.room_name = self.scope['url_route']['kwargs']['room_name']
